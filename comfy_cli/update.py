@@ -23,6 +23,7 @@ def check_for_newer_pypi_version(package_name: str, current_version: str, timeou
     :return: A tuple where the first value indicates if a newer version is available,
              and the second value is the latest version (or the current version if no update is found).
     """
+    return False, "v0.0.0"
     url = f"https://pypi.org/pypi/{package_name}/json"
     try:
         response = requests.get(url, timeout=timeout)
@@ -47,6 +48,7 @@ def check_for_updates(timeout: float = 10) -> None:
 
     :param timeout: (default 10) Timeout in seconds for the request to check for updates.
     """
+    pass
     current_version = get_version_from_pyproject()
     has_newer, newer_version = check_for_newer_pypi_version("comfy-cli", current_version, timeout=timeout)
 

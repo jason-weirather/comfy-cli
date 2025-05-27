@@ -242,7 +242,7 @@ def install(
         ),
     ] = False,
 ):
-    check_for_updates(timeout=3)
+    #check_for_updates(timeout=3)
     checker = EnvChecker()
 
     comfy_path, _ = workspace_manager.get_workspace_path()
